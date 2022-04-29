@@ -19,7 +19,8 @@ public class Methods {
             }
         }
         void create(String person, int money, String password_){
-            try(Connection conn = DriverManager.getConnection(url, username, password)){
+            try{
+                Connection conn = DriverManager.getConnection(url, username, password);
                 PreparedStatement st = conn.prepareStatement("INSERT INTO base (person, money, passwords) VALUES (?, ?, ?)");
                 st.setString(1, person);
                 st.setInt(2, money);
@@ -35,7 +36,8 @@ public class Methods {
         }
         void transaction(String person1, String person2, int cash){
 
-            try (Connection conn = DriverManager.getConnection(url, username, password)){
+            try{
+                Connection conn = DriverManager.getConnection(url, username, password);
                 PreparedStatement person_first = conn.prepareStatement("SELECT id, person, passwords, money FROM base WHERE person = ?;"); person_first.setString(1, person1);
                 PreparedStatement person_second = conn.prepareStatement("SELECT id, person, passwords, money FROM base WHERE person = ?;");person_second.setString(1, person2);
                 ResultSet resultSet1 = person_first.executeQuery();
