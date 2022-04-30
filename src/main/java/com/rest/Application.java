@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // mvn org.springframework.boot:spring-boot-maven-plugin:run
 @SpringBootApplication
 public class Application {
-//todo 000
+//todo попробовать git cloneasddd
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
