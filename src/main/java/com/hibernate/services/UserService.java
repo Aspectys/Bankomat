@@ -1,5 +1,5 @@
-package com.hibernate;
-import com.hibernate.models.*
+package com.hibernate.services;
+import com.hibernate.models.*;
 import com.hibernate.dao.UserDAO;
 
 import java.util.List;

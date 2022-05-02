@@ -1,11 +1,11 @@
-package com.hibernate;
+package com.hibernate.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Table(name = "users")
-public class User {
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -13,16 +13,24 @@ public class User {
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Card> cards;
 
+    public User() {
+    }
     public User(String name){
         this.name = name;
         cards = new ArrayList<Card>();
     }
-
-    public void setname(String name){
+    public void addCard(Card card){
+        card.setUser(this);
+        cards.add(card);
+    }
+    public void removeCard(Card card){
+        cards.remove(card);
+    }
+    public void setName(String name){
         this.name = name;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 

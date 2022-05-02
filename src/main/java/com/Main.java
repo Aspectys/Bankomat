@@ -1,3 +1,5 @@
+package com;
+
 import java.io.File;
 import java.sql.*;
 import java.util.Scanner;
@@ -29,6 +31,8 @@ public class Main extends Methods {
                 account.transaction(person1, person2, cash); System.out.print("Транзакция совершена!");
                 break;
 
+            default:
+                throw new IllegalStateException("Unexpected value: " + a);
         }
     }
     private static Connection getH2Connection() throws SQLException {
