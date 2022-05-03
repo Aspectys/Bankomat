@@ -1,4 +1,5 @@
 package com.hibernate.models;
+
 import javax.persistence.*;
 @Entity
 @Table(name = "cards")
@@ -31,11 +32,11 @@ public class Card {
         this.cardName = cardName;
     }
 
-    public void setmoney(int money) {
+    public void setMoney(int money) {
         money = money;
     }
 
-    public int getmoney() {
+    public int getMoney() {
         return money;
     }
 

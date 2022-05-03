@@ -13,9 +13,13 @@ public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+<<<<<<< HEAD
     @Column(name="FIO")
+=======
+    @Column(name = "name")
+>>>>>>> b2a3d4121d2ab58bc9ef9f69167e0252d380c901
     private String name;
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Card> cards;
 
     public User() {
