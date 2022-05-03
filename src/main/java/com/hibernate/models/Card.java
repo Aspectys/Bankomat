@@ -10,6 +10,7 @@ public class Card {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idUser")
     private User user;
+
     private int money;
 
     public Card(){

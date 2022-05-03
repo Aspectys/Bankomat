@@ -1,14 +1,19 @@
 package com.hibernate.models;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Table;
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name="FIO")
     private String name;
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Card> cards;

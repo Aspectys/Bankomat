@@ -1,9 +1,11 @@
 package com.hibernate.dao;
 
 import com.hibernate.models.*;
+import com.hibernate.util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import com.hibernate.util.HibernateSessionFactoryUtil;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
@@ -35,8 +37,14 @@ public class UserDAO {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Card.class, id);
     }
     public List<User> findAll(){
-        List<User> users = (List<User>)
-                HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
+        ArrayList<User> users = new ArrayList();
+
+        try{
+            users = (ArrayList<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
+            System.out.println(users);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return users;
     }
 }
