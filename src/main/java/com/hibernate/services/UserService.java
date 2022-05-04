@@ -14,17 +14,20 @@ public class UserService {
     }
     public void saveUser(User user){
         usersDAO.save(user);
+        System.out.println("usersService: Saved!");
     }
     public void deleteUser(User user){
         usersDAO.delete(user);
+        System.out.println("usersService: Deleted!");
     }
     public void updateUser(User user){
         usersDAO.update(user);
+        System.out.println("usersService: Updated!");
     }
     public List<User> findAllUsers() {
         return usersDAO.findAll();
     }
-    public Card findAutoById(int id) {
+    public Card findCardById(int id) {
         return usersDAO.findCardById(id);
     }
 }

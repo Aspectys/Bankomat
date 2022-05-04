@@ -17,13 +17,14 @@ public class Main {
         user.addCard(qazcom);
         Card halyk = new Card("halyk family", 90000);
         user.addCard(halyk);
-        user.addCard(halyk);
-        userService.updateUser(user);
+
+
         user.setName("Jordan");
-        user.setName("Jordan");
+
         user.getCards();
-        user.toString();
+
 
 
     }
+
 }

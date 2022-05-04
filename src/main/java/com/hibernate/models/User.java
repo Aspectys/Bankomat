@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "ID"))
+@Table(name = "users")
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -25,10 +25,15 @@ public class User{
         this.name = name;
         cards = new ArrayList<Card>();
     }
+    public User(int id){
+        this.id = id;
+        cards = new ArrayList<Card>();
+    }
     public void addCard(Card card){
         card.setUser(this);
         cards.add(card);
     }
+
     public void removeCard(Card card){
         cards.remove(card);
     }
@@ -42,6 +47,10 @@ public class User{
 
     public List<Card> getCards() {
         return cards;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setCards(List<Card> cards) {

@@ -46,11 +46,12 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
+        System.out.println("Card{" +
                 "id =" + id +
                 "\"" + "cardName =" + cardName +
                 "\", user =" + user +
                 "\", money =\"" + money +
-                '}';
+                '}');
+        return "ok";
     }
 }
