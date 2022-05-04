@@ -8,16 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "ID"))
 public class User{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID", unique = true, nullable = false)
     private int id;
-<<<<<<< HEAD
-    @Column(name="FIO")
-=======
-    @Column(name = "name")
->>>>>>> b2a3d4121d2ab58bc9ef9f69167e0252d380c901
+    @Column(name="name", unique = true, nullable = false)
     private String name;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Card> cards;
