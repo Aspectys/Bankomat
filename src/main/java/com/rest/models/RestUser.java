@@ -1,22 +1,18 @@
 package com.rest;
-public class Rest {
+public class RestUser {
     private String uName;
     private int uId;
 
-    public Rest(String uName, int uId){
+    public RestUser(String uName, int uId){
         this.uName = uName;
         this.uId = uId;
 
     }
-    /*public Rest(int uId, String func){
-        this.uId = uId;
-        this.func = func;
-    }*/
 
-    public Rest(int uId){
+    public RestUser(int uId){
         this.uId = uId;
     }
-    public Rest(String uName){
+    public RestUser(String uName){
         this.uName = uName;
     }
     /*public Rest(int uId, String uName){
