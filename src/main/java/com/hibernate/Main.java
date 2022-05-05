@@ -9,7 +9,6 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[]args)throws SQLException{
-
         UserService userService = new UserService();
         User user = new User("Alimzhan");
         userService.saveUser(user);
@@ -17,11 +16,9 @@ public class Main {
         user.addCard(qazcom);
         Card halyk = new Card("halyk family", 90000);
         user.addCard(halyk);
-
-
         user.setName("Jordan");
-
-        user.getCards();
+        userService.updateUser(user);
+        System.out.println(user.getCards());
 
 
 
