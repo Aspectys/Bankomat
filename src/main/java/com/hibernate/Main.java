@@ -19,9 +19,6 @@ public class Main {
         user.setName("Jordan");
         userService.updateUser(user);
         System.out.println(user.getCards());
-
-
-
     }
 
 }

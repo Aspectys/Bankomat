@@ -1,4 +1,4 @@
-package com.rest;
+package com.rest.models;
 public class RestUser {
     private String uName;
     private int uId;
@@ -8,7 +8,7 @@ public class RestUser {
         this.uId = uId;
 
     }
-
+    public RestUser(){}
     public RestUser(int uId){
         this.uId = uId;
     }

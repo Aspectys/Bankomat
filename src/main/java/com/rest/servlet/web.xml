@@ -1,0 +1,4 @@
+<servlet-mapping>
+    <servlet-name>ViewBookServlet</servlet-name>
+    <url-pattern>/view_book</url-pattern>
+</servlet-mapping>
